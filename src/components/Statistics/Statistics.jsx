@@ -10,11 +10,10 @@ function getRandomColor() {
   return color;
 }
 
-export const Statistics = ({ title, dataset }) => {
+export const Statistics = ({ title = null, dataset }) => {
   return (
     <section className={styles.statistics}>
-      <h2 className={styles.title}>{title}</h2>
-
+      {title !== null && <h2 className={styles.title}>{title}</h2>}
       <ul className={styles.statList}>
         {dataset.map(item => (
           <li
